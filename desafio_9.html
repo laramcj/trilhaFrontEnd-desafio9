@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Desafio 9 - TrilhaFrontEnd</title>
+</head>
+
+<body>
+    <h1 class="display-5 text-info text-center">Desafio 9</h1>
+    <div class="bg-light border border-info rounded m-3 p-3">
+        <h4>a)</h4>
+        O <strong>package.json</strong> é usado por todos os projetos no espaço de trabalho, incluindo o
+        projeto de aplicativo inicial que é criado pela CLI ao criar o espaço de trabalho.
+
+        <p> Inicialmente, este <strong>package.json</strong> inclui um conjunto inicial de pacotes, alguns dos quais são
+            exigidos pelo Angular e outros que suportam cenários de aplicativos comuns. Você adiciona pacotes ao
+            <strong>package.json</strong> à medida que seu aplicativo evolui. Você pode até remover alguns.
+        </p>
+
+        <p> O <strong>package.json</strong> está organizado em dois grupos de pacotes:
+        <ul>
+            <li> As <u>dependências</u> que são essenciais para a execução de aplicativos.</li>
+            <li> <u>DevDependencies</u> que são necessários apenas para desenvolver aplicativos.</li>
+        </ul>
+        <ul>A seção de dependências do <strong>package.json</strong> contém:
+            <li><u>Angular packages: </u> Núcleo Angular e módulos opcionais; seus nomes de pacotes começam @angular/.
+            </li>
+            <li><u>Support packages: </u> bibliotecas de terceiros que devem estar presentes para que os aplicativos
+                Angular sejam executados.</li>
+            <li><u>Polyfill packages: </u> Polyfills preenchem lacunas na implementação JavaScript de um navegador.</li>
+        </ul>
+        </p>
+    </div>
+    <div class="bg-light border border-info rounded m-3 p-3">
+        <h4>b)</h4>
+        O <strong>angular.json</strong> é um arquivo no nível raiz do workspace Angular, fornece padrões de configuração
+        específicos do projeto e de todo o workspace para ferramentas de construção e desenvolvimento fornecidas pela
+        CLI do Angular. Os valores de caminho fornecidos na configuração são relativos à pasta root do workspace.
+    </div>
+    <div class="bg-light border border-info rounded m-3 p-3">
+        <h4>c)</h4>
+        O <strong>router outlet</strong> atua como um espaço reservado que o Angular preenche dinamicamente com base no
+        estado atual do roteador.
+        <p>Um <strong>router outlet</strong> emite um evento de ativação quando um novo componente é instanciado, um
+            evento de desativação quando um componente é destruído. Um evento anexado é emitido quando o
+            RouteReuseStrategy instrui a saída a reconectar a subárvore, e o evento desanexado é emitido quando o
+            RouteReuseStrategy instrui a saída a desanexar a subárvore.</p>
+
+    </div>
+    <div class="bg-light border border-info rounded m-3 p-3">
+        <h4>d)</h4>
+        <p>A Declaração 1 é eager-load carrega os dados mesmo que você não vá utilizá-los.</p>
+        <p>A Declaração 2 é lazy-load e será carregada 'on demand' (apenas quando você solicitar explicitamente o
+            carregamento desta).</p>
+
+    </div>
+    <div class="bg-light border border-info rounded m-3 p-3">
+        <h4>e)</h4>
+        <p>Os componentes definem visualizações, que são conjuntos de elementos de tela que o Angular pode escolher e
+            modificar de acordo com a lógica e os dados do seu programa.</p>
+        <p>Os componentes usam serviços, que fornecem funcionalidades específicas não diretamente relacionadas às
+            visualizações. Os provedores de serviços podem ser injetados em componentes como dependências, tornando seu
+            código modular, reutilizável e eficiente.</p>
+        <p>Você define a lógica do aplicativo de um componente — o que ele faz para dar suporte à exibição — dentro de
+            uma
+            classe. A classe interage com a view por meio de uma API de propriedades e métodos.
+            Angular cria, atualiza e destrói componentes à medida que o usuário se move pelo aplicativo. Seu aplicativo
+            pode
+            agir a cada momento neste ciclo de vida por meio de ganchos de ciclo de vida opcionais.</p>
+
+    </div>
+    <div class="bg-light border border-info rounded m-3 p-3">
+        <h4>f)</h4>
+        Foi criado o base-resource-form, onde todas as informações e configurações de formulario fora inseridas em um
+        unico arquivo para que os outros componentes herdem essas configurações.
+        Foi criado o base-resource-list onde ficou toda a parte logica das paginas que listam as categorias e os
+        lançamentos.
+        Assim também o compoente de migalha de pao, o cabecalho, foi criado um componente para os erros dos campos do
+        formulario, os erros de servidor e por fim a barra de navegação.
+
+    </div>
+    <div class="bg-light border border-info rounded m-3 p-3">
+        <h4>g)</h4>
+        @Input() permite que um componente pai atualize dados no componente filho. Neste caso, cria uma lista dentro do
+        objeto BreadCrumbItem;
+
+    </div>
+    <div class="bg-light border border-info rounded m-3 p-3">
+        <h4>h)</h4>
+        @Output() permite que o filho envie dados para um componente pai, o Output é um decorator que marca um campo
+        como uma propriedade de saida, a propriedade da DOM vinculada a esta saida é atualizada automaticamente quando
+        ocorre alterações.
+
+    </div>
+    <div class="bg-light border border-info rounded m-3 p-3">
+        <h4>i)</h4>
+        <ul>
+            <li><u>Core</u> é o módulo projetado para os serviços Singleton compartilhados em todo o aplicativo.
+                (funcionamento da aplicação) </li>
+            <li><u>Pages</u> é o módulo onde colocamos os componentes responsáveis pela view das páginas do projeto.
+                (renderizado na tela)
+            </li>
+            <li><u>Shared</u> é o módulo que trata da funcionalidade compartilhada, é onde coloca-se os componentes,
+                pipes e diretivas reutilizáveis. (compartilhamento de dados e funções)</li>
+        </ul>
+
+    </div>
+    <div class="bg-light border border-info rounded m-3 p-3">
+        <h4>j)</h4>
+        O arquivo in-memory-database serve para criar um "back-end" mockado no projeto.
+
+    </div>
+    <div class="bg-light border border-info rounded m-3 p-3">
+        <h4>k)</h4>
+        <ul>Métodos:
+            <li><strong>setValue()</strong>: define o valor de um controle do formGroup.</li>
+            <li><strong>clearValidators()</strong>: esvazia a lista de validadores síncronos.</li>
+            <li><strong>get()</strong>: obtém o valor de um controle ou caminho.</li>
+            <li><strong>getError()</strong>: informa dados de erros ao controle conforme o caminho.</li>
+            <li><strong>patchValue()</strong>: corrige o valor do FormGroup, recebe um objeto e faz o possível para
+                corresponder os valores ao controle correto no Formgrup.</li>
+        </ul>
+        <ul>Propriedades:
+            <li><strong>invalid</strong>: define um controle como inválido de acordo com o seu status </li>
+            <li><strong>validator</strong>: retorna a função usada para determinar se o formulario esta valido de forma
+                síncrona.</li>
+            <li><strong>disabled</strong>: define o status do controle para desabilitado.</li>
+            <li><strong>value</strong>: exibe os valores dos campos no formulario.</li>
+            <li><strong>root</strong>: recupera o ancestral de nível superior do controle.</li>
+        </ul>
+
+    </div>
+    <div class="bg-light border border-info rounded m-3 p-3">
+        <h4>l)</h4>
+        <ul>
+            <li> Se a variável currentAction for igual a "edit", utilize o observable paramMap e aplique um pipe que se
+                obter sucesso utilizará o swicthMap;</li>
+            <li> Usando swicthMap todos os requests anteriores serão ignorados se um novo evento chegar. </li>
+            <li> O params é instanciado ao pegar o lançamento por ID em lançamentoService e transformar o id recebido em
+                número. </li>
+            <li> Subscreve o lançamento que redefine o valor do objeto lançamento buscado através do ID;</li>
+            <li> Configura os valores no lancamentoForm</li>
+            <li> Caso haja erro, dispara um alerta com a mensagem 'Ocorreu um erro no servidor, tente mais tarde.'</li>
+        </ul>
+
+
+
+    </div>
+    <div class="bg-light border border-info rounded m-3 p-3">
+        <h4>m)</h4>
+        Herança, pois o componente "EntryFormComponent" está herdando os métodos do "BaseResourceFormComponent"
+
+    </div>
+    <div class="bg-light border border-info rounded m-3 p-3">
+        <h4>n)</h4>
+        Polimorfismo, pois o método "ngOninit()" pode ter implementações diferentes em classes diferentes.
+
+    </div>
+    <div class="bg-light border border-info rounded m-3 p-3">
+        <h4>o)</h4>
+        Injeção de dependências, pois foi usado para evitar o alto nível de acoplamento de código dentro de uma
+        aplicação.
+
+    </div>
+
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+        </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous">
+        </script>
+</body>
+
+</html>
